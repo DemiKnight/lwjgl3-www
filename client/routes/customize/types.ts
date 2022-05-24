@@ -103,6 +103,7 @@ export enum Mode {
   Maven = 'maven',
   Gradle = 'gradle',
   Ivy = 'ivy',
+  Sbt = 'sbt',
 }
 
 export enum Language {

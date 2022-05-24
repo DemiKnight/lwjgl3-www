@@ -75,8 +75,14 @@ function getInitialConfig(): BuildStore {
           logo: '/img/ivy.png',
           file: 'ivy.xml',
         },
+        [Mode.Sbt]: {
+          id: Mode.Sbt,
+          title: 'Sbt',
+          logl: '/img/sbt.png',
+          logo: 'build.sbt'
+        }
       },
-      allIds: [Mode.Zip, Mode.Maven, Mode.Gradle, Mode.Ivy],
+      allIds: [Mode.Zip, Mode.Maven, Mode.Gradle, Mode.Ivy, Mode.Sbt],
     },
     natives: {
       byId: {
