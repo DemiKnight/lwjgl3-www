@@ -78,8 +78,8 @@ function getInitialConfig(): BuildStore {
         [Mode.Sbt]: {
           id: Mode.Sbt,
           title: 'Sbt',
-          logl: '/img/sbt.png',
-          logo: 'build.sbt'
+          logo: '/img/sbt.svg',
+          file: 'build.sbt'
         }
       },
       allIds: [Mode.Zip, Mode.Maven, Mode.Gradle, Mode.Ivy, Mode.Sbt],

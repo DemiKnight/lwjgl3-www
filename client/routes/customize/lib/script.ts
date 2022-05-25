@@ -1,5 +1,3 @@
-import { BuildType, Mode, NATIVE_ALL } from '../types';
-import type { ScriptState } from '../BuildScript';
 import type {
   Binding,
   BindingDefinition,
@@ -9,9 +7,12 @@ import type {
   PlatformSelection,
   Version,
 } from '../types';
-import { generateGradle } from './gradle';
-import { generateIvy } from './ivy';
-import { generateMaven } from './maven';
+import {BuildType, Mode, NATIVE_ALL} from '../types';
+import type {ScriptState} from '../BuildScript';
+import {generateGradle} from './gradle';
+import {generateIvy} from './ivy';
+import {generateMaven} from './maven';
+import {generateSbt} from "~/routes/customize/lib/sbt";
 
 export function copyToClipboard(ref: React.RefObject<HTMLElement>) {
   const selection = window.getSelection();
@@ -79,6 +80,8 @@ export function generateScript(mode: Mode, state: ScriptState): string {
       return generateGradle(state);
     case Mode.Ivy:
       return generateIvy(state);
+    case Mode.Sbt:
+      return generateSbt(state);
     default:
       throw 'Unsupported script mode';
   }
